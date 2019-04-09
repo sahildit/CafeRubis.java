@@ -44,14 +44,46 @@ public class Cafe extends PApplet
         }
     }
 
+    float border = 20;
+    float buttonWidth = 200;
+    float buttonHeight = 50;
+    float gap = 20;
+
     public void DisplayProducts()
     {
-        
+        for(int i = 0; i< products.size(); i ++)
+        {
+            
+            // textAlign(LEFT,CENTER);
+            // background(200);
+            // fill(0);
+            // String name = "Your Stop - All About coffee";
+
+            Product p = products.get(i);
+            float x = border;
+            float y = border + (i * (buttonHeight + gap));
+            noFill();
+            stroke(0);
+            // fill(100,100,200);
+            // text("Your Stop - All About coffee",400,70);
+            rect(x,y,buttonWidth,buttonHeight);
+            line(400,100,400,500);
+            textAlign(CENTER,TOP);
+            fill(0);
+            text(p.getName(), x + buttonWidth * 0.5f, y + buttonHeight * 0.5f);
+            textAlign(CENTER,BOTTOM);
+            fill(0);
+            text(p.getPrice(), x + buttonWidth * 0.5f, y + buttonHeight * 0.5f);
+
+
+        }
     }
+
+
 
     public void draw()
     {
-        
+        DisplayProducts();
     }
     
 }
